@@ -5,18 +5,16 @@ class KeypadSensor : public Component, public Sensor {
 
     public:
 
-    static const byte n_rows = 4;
+    static const byte n_rows = 2;
     static const byte n_cols = 3;
     
     char keys[n_rows][n_cols] = {
     {'1','2','3'},
-    {'4','5','6'},
-    {'7','8','9'},
-    {'*','0','#'}
+    {'4','5','6'}
     };
     
-    byte colPins[n_cols] = {D3, D2, D1};
-    byte rowPins[n_rows] = {D7, D6, D5, D4};
+    byte colPins[n_cols] = {26, 13, 27};
+    byte rowPins[n_rows] = {14, 12};
     
     Keypad myKeypad = Keypad( makeKeymap(keys), rowPins, colPins, n_rows, n_cols); 
 
